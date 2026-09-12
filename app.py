@@ -6,7 +6,7 @@ from telegram.ext import Application, CommandHandler, ContextTypes
 
 # --- CONFIG ---
 TOKEN = os.environ.get("TELEGRAM_TOKEN")
-RENDER_URL = os.environ.get("RENDER_EXTERNAL_URL")  # Render sets this automatically
+RENDER_URL = "https://mygohbot.onrender.com"  # Render sets this automatically
 
 # --- BOT COMMANDS ---
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
