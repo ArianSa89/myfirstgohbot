@@ -34,7 +34,7 @@ async def hello(update: Update, context: ContextTypes.DEFAULT_TYPE):
 KEYWORD_REPLIES = {
     "سلام": "علیک",
     "گوه بات": "دلم جون",
-    " فعلا عشق"" خدافظ",
+    "خدافظ": "فعلا",
     "مرسی": "فدا",
     "مرسی زیاد": "عشق",
     "کمک": "@ArianSa89.",
