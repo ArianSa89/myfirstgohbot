@@ -58,7 +58,10 @@ application = Application.builder().token(TOKEN).build()
 application.add_handler(CommandHandler("start", start))
 application.add_handler(CommandHandler("hello", hello))
 application.add_handler(
-    MessageHandler(filters.TEXT & ~filters.COMMAND, keyword_reply)
+    MessageHandler(
+        filters.TEXT & ~filters.COMMAND & (filters.ChatType.PRIVATE | filters.Entity("mention") | filters.REPLY),
+        keyword_reply
+    )
 )
 
 # --- FLASK WEB SERVER ---
