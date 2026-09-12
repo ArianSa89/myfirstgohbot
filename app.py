@@ -16,23 +16,29 @@ RENDER_URL = "https://mygohbot.onrender.com"  # <-- Change this to YOUR actual R
 
 # --- BOT COMMANDS ---
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("Hello! I am your simple bot.")
+    user = update.effective_user
+    print(f"=== USER STARTED BOT ===")
+    print(f"ID: {user.id}")
+    print(f"Name: {user.first_name} {user.last_name or ''}")
+    print(f"Username: @{user.username or 'none'}")
+    print(f"========================")
+    await update.message.reply_text("کیستی ای مارکو.")
 
 async def hello(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("Hello there! This is a second command.")
+    await update.message.reply_text("سلامd.")
 
 # --- KEYWORD AUTO-REPLIES ---
 KEYWORD_REPLIES = {
-    "hello": "joon",
-    "hi": "khastani hasti?",
-    "bye": "siktir",
-    "thanks": "fada",
-    "thank you": "eshgh",
-    "help": "goshadam nasakhtam.",
-    "how are you": "Awli",
-    "your name": "goh bot, zade ArianSA89",
-    "good morning": "Good morning! ☀️",
-    "good night": "shab o roegar khosh",
+    "سلام": "علیک",
+    " گوه بات": " دلم جون",
+    "بای": "صیک",
+    "مرسی": "فدا",
+    "مرسی زیاد": "عشق",
+    "کمک": "@ArianSa89.",
+    "چطوری": "عالی",
+    "اسمت": "گوه بات،زاده ارین",
+    "صبح بخیر": "صبح بخیررررر",
+    "شبخوش": "شبو روزگارت خوش",
 }
 
 async def keyword_reply(update: Update, context: ContextTypes.DEFAULT_TYPE):
